@@ -1,4 +1,4 @@
-import { CommandInteraction, EmbedBuilder } from "discord.js"
+import { ColorResolvable, CommandInteraction, EmbedBuilder } from "discord.js"
 
 import { replyToInteraction } from "@utils/functions"
 /**
@@ -13,6 +13,14 @@ export const simpleSuccessEmbed = (interaction: CommandInteraction, message: str
         .setTitle(`✅ ${message}`)
 
     replyToInteraction(interaction, { embeds: [embed] })
+}
+
+export const simpleInfoEmbed = (interaction: CommandInteraction, message?:string, title?:string, image?:string, color?:ColorResolvable) => {
+    const embed = new EmbedBuilder()
+        .setTitle(title || null)
+        .setImage(image || null)
+        .setDescription(message || null)
+        .setColor(color || null) // GREEN // see:
 }
 
 /**
