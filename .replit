@@ -1,5 +1,5 @@
-compile = "./.config/build.sh"
-run = "node --enable-source-maps .build/index.js"
+compile = "npm install && npm run build"
+run = "npm run dev"
 entrypoint = "index.ts"
 hidden = [".build", ".config"]
 
@@ -27,6 +27,5 @@ start = "typescript-language-server --stdio"
 
 [deployment]
 run = ["sh", "-c", "npm run start"]
-build = ["sh", "-c", "npm run build"]
 ignorePorts = true
 deploymentTarget = "gce"
